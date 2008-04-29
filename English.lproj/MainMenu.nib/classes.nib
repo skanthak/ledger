@@ -1,0 +1,12 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            CLASS = MWApplication; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {aboutPanel = id; }; 
+            SUPERCLASS = NSApplication; 
+        }
+    ); 
+    IBVersion = 1; 
+}
