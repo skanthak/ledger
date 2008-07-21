@@ -1,12 +1,12 @@
-[submodule "cambl"]
+[submodule "cambl-20080203"]
 	path = cambl
 	url = .
-[submodule "cl-ledger"]
+[submodule "cl-ledger-20080203"]
 	path = cl-ledger
 	url = .
-[submodule "periods"]
+[submodule "periods-20080201"]
 	path = periods
 	url = .
-[submodule "red-black"]
+[submodule "red-black-20071213"]
 	path = red-black
 	url = .
