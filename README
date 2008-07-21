@@ -1,0 +1,17 @@
+This directory contains all the code that was written while Ledger was being
+ported to Common Lisp in 2007-2008.  I'm keeping the history of it in the
+repository for archival reasons.
+
+To view the code, you must first checkout the submodule as follows:
+
+  $ git submodule init
+  $ git submodule update
+
+Or, you can check out the individual sub-projects using the following tags:
+
+  cambl-20080203
+  periods-20080201
+  cl-ledger-20080203
+  red-black-20071213
+
+John
