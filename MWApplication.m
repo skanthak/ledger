@@ -10,4 +10,5 @@
   [aboutPanel makeKeyAndOrderFront:self];
 }
 
+@synthesize aboutPanel;
 @end

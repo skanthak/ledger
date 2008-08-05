@@ -6,4 +6,5 @@
 {
     IBOutlet id aboutPanel;
 }
+@property (retain) id aboutPanel;
 @end

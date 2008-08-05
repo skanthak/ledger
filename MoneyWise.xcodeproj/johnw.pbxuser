@@ -18,7 +18,6 @@
 		breakpoints = (
 			330D2DFD087B66CE00D35809 /* format.cc:58 */,
 		);
-		breakpointsGroup = 331B50C20A8B1F3C00A5E1CB /* XCBreakpointsBucket */;
 		codeSenseManager = 33C9FA6408789834009CDE04 /* Code sense */;
 		executables = (
 			33C9FA5808789815009CDE04 /* MoneyWise */,
@@ -81,8 +80,8 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					471,
-					10,
+					150,
+					60,
 					20,
 					101,
 					43,
@@ -98,7 +97,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 192112795;
+			PBXPerProjectTemplateStateSaveDate = 239668376;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -639,7 +638,7 @@
 				Frame = "{{0, 0}, {745, 422}}";
 				RubberWindowFrame = "367 198 745 464 0 0 1280 832 ";
 			};
-			PBXWorkspaceStateSaveDate = 192112795;
+			PBXWorkspaceStateSaveDate = 239668376;
 		};
 		sourceControlManager = 33C9FA6308789834009CDE04 /* Source Control */;
 		userBuildSettings = {
@@ -681,25 +680,20 @@
 		isa = PBXFileBreakpoint;
 		breakpointStyle = 0;
 		continueAfterActions = 0;
+		countType = 0;
 		delayBeforeContinue = 0;
 		fileReference = 330D2DFE087B66D200D35809 /* format.cc */;
 		hitCount = 0;
+		ignoreCount = 0;
 		lineNumber = 58;
 		modificationTime = 0;
 		state = 2;
 	};
 	330D2DFE087B66D200D35809 /* format.cc */ = {
 		isa = PBXFileReference;
-		lastKnownFileType = file;
+		lastKnownFileType = sourcecode.cpp.cpp;
 		path = format.cc;
 		sourceTree = "<group>";
-	};
-	331B50C20A8B1F3C00A5E1CB /* XCBreakpointsBucket */ = {
-		isa = XCBreakpointsBucket;
-		name = "Project Breakpoints";
-		objects = (
-			330D2DFD087B66CE00D35809 /* format.cc:58 */,
-		);
 	};
 	3325A649087E291D00DDC078 /* LedgerInterface.cc */ = {
 		uiCtxt = {
@@ -763,12 +757,12 @@
 	};
 	33C9FA5808789815009CDE04 /* MoneyWise */ = {
 		isa = PBXExecutable;
-		activeArgIndex = 2147483647;
 		activeArgIndices = (
 		);
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
