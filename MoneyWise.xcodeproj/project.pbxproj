@@ -308,8 +308,8 @@
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				HEADER_SEARCH_PATHS = (
-					../ledger,
-					../ledger/src,
+					./ledger,
+					./ledger/src,
 					/usr/local/include,
 					"/usr/local/include/boost-1_35",
 					/opt/local/include,
@@ -317,13 +317,13 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Applications;
 				LIBRARY_SEARCH_PATHS = (
-					../ledger/.libs,
+					./ledger/.libs,
 					.,
 					/usr/local/lib,
 					/opt/local/lib,
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../ledger/.libs\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/ledger/.libs\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = MoneyWise;
@@ -352,18 +352,22 @@
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				HEADER_SEARCH_PATHS = (
-					/home/johnw/src/ledger,
-					/sw/lib,
+					./ledger,
+					./ledger/src,
+					/usr/local/include,
+					"/usr/local/include/boost-1_35",
+					/opt/local/include,
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
-					/home/johnw/src/ledger/.libs,
-					/Users/johnw/src/MoneyWise,
-					/sw/lib,
+					./ledger/.libs,
+					.,
+					/usr/local/lib,
+					/opt/local/lib,
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../ledger/.libs\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/ledger/.libs\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = MoneyWise;
@@ -390,18 +394,22 @@
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				HEADER_SEARCH_PATHS = (
-					/home/johnw/src/ledger,
-					/sw/lib,
+					./ledger,
+					./ledger/src,
+					/usr/local/include,
+					"/usr/local/include/boost-1_35",
+					/opt/local/include,
 				);
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
-					/home/johnw/src/ledger/.libs,
-					/Users/johnw/src/MoneyWise,
-					/sw/lib,
+					./ledger/.libs,
+					.,
+					/usr/local/lib,
+					/opt/local/lib,
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
 				);
-				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../ledger/.libs\"";
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/ledger/.libs\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = MoneyWise;
