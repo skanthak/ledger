@@ -97,7 +97,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 239668376;
+			PBXPerProjectTemplateStateSaveDate = 240517289;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -638,7 +638,7 @@
 				Frame = "{{0, 0}, {745, 422}}";
 				RubberWindowFrame = "367 198 745 464 0 0 1280 832 ";
 			};
-			PBXWorkspaceStateSaveDate = 239668376;
+			PBXWorkspaceStateSaveDate = 240517289;
 		};
 		sourceControlManager = 33C9FA6308789834009CDE04 /* Source Control */;
 		userBuildSettings = {
@@ -646,8 +646,9 @@
 	};
 	2A37F4ACFDCFA73011CA2CEA /* JournalDocument.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {803, 1105}}";
-			sepNavSelRange = "{511, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {855, 1436}}";
+			sepNavSelRange = "{297, 38}";
+			sepNavVisRange = "{0, 410}";
 			sepNavVisRect = "{{0, 0}, {803, 512}}";
 			sepNavWindowFrame = "{{117, 127}, {750, 558}}";
 		};
@@ -704,16 +705,18 @@
 	};
 	3325A64A087E291D00DDC078 /* LedgerInterface.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 1358}}";
-			sepNavSelRange = "{2420, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {855, 1026}}";
+			sepNavSelRange = "{1257, 25}";
+			sepNavVisRange = "{607, 682}";
 			sepNavVisRect = "{{0, 392}, {711, 429}}";
 			sepNavWindowFrame = "{{130, 270}, {750, 558}}";
 		};
 	};
 	3325A659087E2AB800DDC078 /* LedgerFunctors.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {803, 811}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {855, 1062}}";
+			sepNavSelRange = "{1071, 0}";
+			sepNavVisRange = "{537, 669}";
 			sepNavVisRect = "{{0, 0}, {803, 504}}";
 		};
 	};
@@ -749,8 +752,9 @@
 	};
 	33BC70320878A8BF00197981 /* JournalController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 4620}}";
-			sepNavSelRange = "{6836, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {855, 4908}}";
+			sepNavSelRange = "{1501, 0}";
+			sepNavVisRange = "{1104, 571}";
 			sepNavVisRect = "{{0, 3559}, {711, 429}}";
 			sepNavWindowFrame = "{{15, 269}, {750, 558}}";
 		};

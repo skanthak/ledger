@@ -46,7 +46,7 @@
 - (void)awakeFromNib
 {
   NSString * date_format =
-    [NSString stringWithCString:(format_t::date_format.c_str())];
+    [NSString stringWithCString:(output_date_format.c_str())];
   NSDateFormatter * formatter =
     [[NSDateFormatter alloc]
      initWithDateFormat:date_format allowNaturalLanguage:NO];
@@ -63,9 +63,11 @@
 
 - (IBAction)setQueryPredicate:(id)sender
 {
+#if 0
   ledgerConfig->set_query_predicates([[accountQuery stringValue] cString],
 				     [[payeeQuery stringValue] cString]);
   [self invokeQuery:self];
+#endif
 }
 
 - (IBAction)setQueryPeriod:(id)sender
@@ -154,8 +156,8 @@ static void calculate_subtotal()
   int len = [item count];
   for (int i = 0; i < len; i++) {
     value = [item objectAtIndex:i];
-    xact  = reinterpret_cast<transaction_t *>([value pointerValue]);
-    add_transaction_to(*xact, subtotal);
+    xact  = reinterpret_cast<xact_t *>([value pointerValue]);
+    add_xact_to(*xact, subtotal);
   }
   return getValueString(subtotal);
 }
@@ -173,17 +175,17 @@ static void calculate_subtotal()
   NSString * ident  = [tableColumn identifier];
   NSValue  * value  = [entries objectAtIndex:rowIndex];
 
-  transaction_t * xact
-    = reinterpret_cast<transaction_t *>([value pointerValue]);
+  xact_t * xact
+    = reinterpret_cast<xact_t *>([value pointerValue]);
 
   int index = 0;
   for (transactions_list::const_iterator i
 	 = xact->entry->transactions.begin();
        i != xact->entry->transactions.end();
        i++) {
-    transaction_t& x = **i;
+    xact_t& x = **i;
     if (transaction_has_xdata(x) &&
-	transaction_xdata_(x).dflags & TRANSACTION_TO_DISPLAY) {
+	transaction_xdata_(x).dflags & XACT_TO_DISPLAY) {
       if (&x == xact)
 	break;
       index++;

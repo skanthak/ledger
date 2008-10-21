@@ -34,7 +34,7 @@ class AddAccountsToArray : public item_handler<account_t>
   virtual void operator()(account_t& xact);
 };
 
-class AddEntriesToArray : public item_handler<transaction_t>
+class AddEntriesToArray : public item_handler<xact_t>
 {
   entry_t * last_entry;
 
@@ -43,6 +43,7 @@ class AddEntriesToArray : public item_handler<transaction_t>
 
   AddEntriesToArray(NSMutableArray * _records)
     : last_entry(NULL), records(_records) {}
+  virtual ~AddEntriesToArry() {}
 
   void register_last_entry();
 
@@ -53,5 +54,5 @@ class AddEntriesToArray : public item_handler<transaction_t>
     }
   }
 
-  virtual void operator()(transaction_t& xact);
+  virtual void operator()(xact_t& xact);
 };

@@ -12,61 +12,13 @@ using namespace ledger;
 
 ledger_interface::ledger_interface()
 {
-  config = new config_t;
-  std::list<std::string> args;
-  config->process_options("r", args.begin(), args.end());
-
-  base_total_expr  = config->total_expr;
-
-  formatter_ptrs = new std::list<item_handler<transaction_t> *>;
+  set_session_context(&session);
+  session.current_report.reset(new report_t(session));
 }
 
 ledger_interface::~ledger_interface()
 {
-  clear_formatter_ptrs();
-  delete formatter_ptrs;
-  delete config;
-}
-
-void ledger_interface::clear_formatter_ptrs()
-{
-  for (std::list<item_handler<transaction_t> *>::iterator i
-	 = formatter_ptrs->begin();
-       i != formatter_ptrs->end();
-       i++)
-    delete *i;
-
-  formatter_ptrs->clear();
-}
-
-static void setup_predicates(config_t * config, const std::string& query,
-			     bool for_account)
-{
-  std::list<std::string> args;
-
-  if (! query.empty()) {
-    const char * text = query.c_str();
-    const char * pch  = std::strtok(const_cast<char *>(text), " ");
-    while (pch != NULL) {
-      args.push_back(pch);
-      pch = strtok(NULL, " ");
-    }
-  }
-
-  if (args.begin() != args.end())
-    config->regexps_to_predicate("r", args.begin(), args.end(), for_account);
-}
-
-void ledger_interface::set_query_predicates
-  (const std::string& account_predicate,
-   const std::string& payee_predicate)
-{
-  // Reset Ledger's predicates before determining them again
-  config->predicate	   = "";
-  config->display_predicate = "";
-
-  setup_predicates(config, account_predicate, true);
-  setup_predicates(config, payee_predicate, false);
+  set_session_context();
 }
 
 void ledger_interface::set_report_period(int period)
@@ -124,6 +76,7 @@ void ledger_interface::set_report_type(int type, bool show_revalued,
                                        const std::string& amount_expr,
                                        const std::string& total_expr)
 {
+#if 0
   switch (type) {
   case REPORT_COMMODITY:
     config->show_revalued = false;
@@ -167,25 +120,22 @@ void ledger_interface::set_report_type(int type, bool show_revalued,
     config->total_expr = std::string("t-A(") + base_total_expr + ")";
     break;
   }
-
-  // jww (2005-07-14): These globals should be removed from format.cc
-
-  ledger::amount_expr.reset(parse_value_expr(config->amount_expr));
-  ledger::total_expr.reset(parse_value_expr(config->total_expr));
+#endif
 }
 
 void ledger_interface::perform_query
   (journal_t * journal,
-   item_handler<account_t> * accounts_functor,
-   item_handler<transaction_t> * entries_functor)
+   acct_handler_ptr accounts_functor,
+   xact_handler_ptr entries_functor)
 {
+#if 0
   // Remove all (possible) previous query results for the given
   // journal
   clear_query(journal);
 
   // Collect all the revelant transactions
   clear_formatter_ptrs();
-  item_handler<transaction_t> * formatter
+  item_handler<xact_t> * formatter
     = config->chain_xact_handlers("r", entries_functor, journal,
 				  journal->master, *formatter_ptrs);
   walk_entries(journal->entries, *formatter);
@@ -205,4 +155,5 @@ void ledger_interface::perform_query
     if (xdata.total)
       xdata.value = xdata.total;
   }
+#endif
 }

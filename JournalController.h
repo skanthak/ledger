@@ -6,9 +6,9 @@
 //  Copyright (c) 2005 New Artisans LLC. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 #include "LedgerInterface.h"
+
+#import <Cocoa/Cocoa.h>
 
 @interface JournalController : NSWindowController
 {

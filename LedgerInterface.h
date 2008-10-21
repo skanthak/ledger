@@ -33,28 +33,11 @@
 
 class ledger_interface
 {
-  ledger::config_t * config;
-  std::string	     base_total_expr;
-
-  std::list<ledger::item_handler<ledger::transaction_t> *> * formatter_ptrs;
-  void clear_formatter_ptrs();
+  ledger::session_t session;
 
 public:
-  std::auto_ptr<ledger::value_expr_t> amount_expr;
-  std::auto_ptr<ledger::value_expr_t> total_expr;
-
   ledger_interface();
   ~ledger_interface();
-
-  void set_query_predicates(const std::string& account_predicate,
-			    const std::string& payee_predicate);
-
-  void set_sort_string(const std::string& sort_order) {
-    config->sort_string = sort_order;
-  }
-  void set_report_period_sort(const std::string& sort_order) {
-    config->report_period_sort = sort_order;
-  }
 
   void set_report_period(int period);
   void set_query_option(int option, bool enable);
@@ -64,11 +47,10 @@ public:
 
   void perform_query
     (ledger::journal_t * journal,
-     ledger::item_handler<ledger::account_t> * accounts_functor,
-     ledger::item_handler<ledger::transaction_t> * entries_functor);
+     ledger::acct_handler_ptr accounts_functor,
+     ledger::xact_handler_ptr entries_functor);
 
-  void clear_query(ledger::journal_t * journal) {
-    clear_formatter_ptrs();
-    clear_journal_xdata(journal);
+  void clear_query() {
+    session.clean_all();
   }
 };

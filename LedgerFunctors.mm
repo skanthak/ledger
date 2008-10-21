@@ -81,12 +81,12 @@ void AddEntriesToArray::register_last_entry()
   for (transactions_list::const_iterator i = last_entry->transactions.begin();
        i != last_entry->transactions.end();
        i++) {
-    transaction_t& xact = **i;
+    xact_t& xact = **i;
     if (transaction_has_xdata(xact) &&
-	transaction_xdata_(xact).dflags & TRANSACTION_TO_DISPLAY) {
+	transaction_xdata_(xact).dflags & XACT_TO_DISPLAY) {
       // Calculate totals for the parent account
       account_xdata_t& xdata = account_xdata(xact_account(xact));
-      add_transaction_to(xact, xdata.value);
+      add_xact_to(xact, xdata.value);
       xdata.count++;
       if (xact.flags & TRANSACTION_VIRTUAL)
 	xdata.virtuals++;
@@ -97,9 +97,9 @@ void AddEntriesToArray::register_last_entry()
   }
 }
 
-void AddEntriesToArray::operator()(transaction_t& xact)
+void AddEntriesToArray::operator()(xact_t& xact)
 {
-  transaction_xdata(xact).dflags |= TRANSACTION_TO_DISPLAY;
+  transaction_xdata(xact).dflags |= XACT_TO_DISPLAY;
 
   if (last_entry && xact.entry != last_entry)
     register_last_entry();
